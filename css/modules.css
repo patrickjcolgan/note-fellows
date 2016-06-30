@@ -1,0 +1,30 @@
+@media only screen and (min-width: 750px) {
+  .welcome_div {
+    display: inline;
+  }
+
+  .image_div {
+    display: block;
+  }
+
+  #logo {
+    height:150px;
+    width:150px;
+    float:right;
+    padding-top: 16px;
+    padding-right: 16px;
+  }
+  .leftspacing {
+    text-align: left;
+  }
+
+  nav {
+    text-align: left;
+    padding-bottom: 16px;
+  }
+
+  .welcome_class {
+    padding-top: 16px;
+  }
+
+}
