@@ -24,6 +24,7 @@ function User (username, password, library, tagLibrary) {
   this.tagLibrary = tagLibrary;
   userLibrary.push(this);
 }
+
 function Note (noteTitle, noteContent) {
   this.noteTitle = noteTitle;
   this.noteContent = noteContent;
@@ -31,17 +32,19 @@ function Note (noteTitle, noteContent) {
   this.noteIndex = 0;
 }
 /******************GLOBAL FUNCTIONS***************/
+
 function newUserForm (event) {
-  document.getElementById('loginForm').innerHTML = '';
-  document.getElementById('loginForm').innerHTML = '<form name="loginform" class="whiteText" id="newUser"><fieldset><legend>New User</legend><label>Username</label><input class="labelColor" type="text" name="usr" placeholder="username" required="required"><label>Password</label><input class="labelColor" type="password" name="pword" placeholder="password" required="required"><p id="msg"></p><input class="button-primary" type="submit" value="Create New User"></fieldset></form><input class="button-primary" type="submit" value="Switch to Login Page" id="existingButton">';
-  var newUserEl = document.getElementById('newUser');
-  newUserEl.addEventListener('submit', function(e) {newUser(e);},false);
-  var existingButton = document.getElementById('existingButton');
-  existingButton.addEventListener('click', function(e) {returnUserForm(e);},false);
-}
+  $('#loginForm').append('<form name="loginform" class="whiteText" id="newUser"><fieldset><legend>New User</legend><label>Username</label><input class="labelColor" type="text" name="usr" placeholder="username" required="required"><label>Password</label><input class="labelColor" type="password" name="pword" placeholder="password" required="required"><p id="msg"></p><input class="button-primary" type="submit" value="Create New User"></fieldset></form><input class="button-primary" type="submit" value="Switch to Login Page" id="existingButton">');
+    var newUserEl = document.getElementById('newUser');
+    newUserEl.addEventListener('submit', function(e) {newUser(e);},false);
+    var existingButton = document.getElementById('existingButton');
+    existingButton.addEventListener('click', function(e) {returnUserForm(e);},false);
+  }
+
+
 function returnUserForm (event) {
-  document.getElementById('loginForm').innerHTML = '';
-  document.getElementById('loginForm').innerHTML = '<form name="loginform" class="whiteText" id="returnUser"><fieldset><legend>Returning User</legend><label>Username</label><input class="labelColor" type="text" name="usr" placeholder="username" required="required"><label>Password</label><input class="labelColor" type="password" name="pword" placeholder="password" required="required"><p id="msg"></p><input class="button-primary" type="submit" value="Login"></fieldset></form><input class="button-primary" type="submit" value="Create New User" id="newButton">';
+  // document.getElementById('loginForm').innerHTML = '';
+  $('#loginForm').append('<form name="loginform" class="whiteText" id="returnUser"><fieldset><legend>Returning User</legend><label>Username</label><input class="labelColor" type="text" name="usr" placeholder="username" required="required"><label>Password</label><input class="labelColor" type="password" name="pword" placeholder="password" required="required"><p id="msg"></p><input class="button-primary" type="submit" value="Login"></fieldset></form><input class="button-primary" type="submit" value="Create New User" id="newButton">');
   var returnUserEl = document.getElementById('returnUser');
   returnUserEl.addEventListener('submit', function(e) {returnUser(e);},false);
   var newButton = document.getElementById('newButton');
@@ -61,6 +64,12 @@ function newUser(event) {
       userExists = true;
     }
   }
+  // userLibrary.each(function() {
+  //   if (userLibrary[i].username === username) {
+  //     msg.textContent = "Username taken";
+  //     userExists = true;
+  //   }
+  // })
   if (!userExists) {
     var temp = new User(username, password, library, tags);
     NoteTracker.currentUser = temp;
@@ -182,12 +191,15 @@ var NoteTracker = {
   },
   clearNoteBrowser: function () {
     document.getElementById('noteList').innerHTML = '';
+    // $('#noteList').append('');
   },
   clearForm: function () {
     document.getElementById('displayWindow').innerHTML = '';
+    // $('#displayWindow').append('');
   },
   clearNoteWrapper: function (){
     document.getElementById('noteWrapper').innerHTML = '';
+    // $('#noteWrapper').append('');
   },
   tagsDropDown: function() {
       userLibrary = JSON.parse(localStorage.getItem('userLibrary'));
