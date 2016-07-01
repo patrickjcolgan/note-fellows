@@ -1,4 +1,4 @@
-html, body {
+/*html, body {
   background-color: #333333;
   font-family: 'Lato', sans-serif;
 }
@@ -11,7 +11,7 @@ footer {
   background-color: black;
   font-family: 'Titillium Web', sans-serif;
   color: #fff;
-}
+}*/
 .content {
   background-image: url('../images/background.jpg');
   background-position: center;
@@ -39,11 +39,11 @@ nav {
 #topSpacing {
   padding-top: 30px;
 }
-#logo {
+/*#logo {
   height:150px;
   width:150px;
-  float:right;
-}
+  /*float:right;*/
+/*}*/
 .smallLogo {
   height: 70px;
   width: 70px;
@@ -198,4 +198,3 @@ input[type="button"].button-primary:focus {
 legend {
   padding-top: 20px;
 }
-

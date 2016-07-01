@@ -1,0 +1,38 @@
+html, body {
+  background-color: #333333;
+  font-family: 'Lato', sans-serif;
+}
+header {
+  background-color: black;
+  font-family: 'Titillium Web', sans-serif;
+  text-transform: uppercase;
+}
+footer {
+  background-color: black;
+  font-family: 'Titillium Web', sans-serif;
+  color: #fff;
+}
+
+body {
+  text-align: center;
+}
+
+nav {
+  margin: 0 auto;
+  padding-top: 1em;
+}
+
+.welcome_div {
+  display: none;
+}
+
+.image_div {
+  display: block;
+}
+
+#logo {
+  height:150px;
+  width:150px;
+  /*float:right;*/
+  padding-top: 1em;
+}
